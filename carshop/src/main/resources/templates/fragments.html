@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="headerfiles">
+    <title>Car Repair Shop System</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{~/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body>
+
+<div th:fragment="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Shop Name / User Name</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/index}"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/courses}">Courses</a>
+                </li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/programs}">Programs</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+                <a sec:authorize="isAuthenticated()" class="btn btn-outline-danger btn-sm"  href="/login" type="button">Logout</a>
+                <a  sec:authorize="isAnonymous()" class="btn btn-outline-info btn-sm" type="button" href="/logout">Login</a>
+            </form>
+        </div>
+    </nav>
+</div>
+
+</body>
+
+</html>

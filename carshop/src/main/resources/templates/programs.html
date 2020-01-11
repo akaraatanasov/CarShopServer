@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<h2>These are the Programs:</h2>
+<div class="col-6">
+    <table class="table table-hover">
+        <th>Id</th>
+        <th>Name</th>
+        <th sec:authorize="hasRole('ROLE_ADMIN')">Action</th>
+        <p th:unless="${programs} and ${programs.size()}">There are no programs!</p>
+        <tr th:each="program : ${programs}">
+            <td th:text="${program.id}"></td>
+            <td th:text="${program.name}"></td>
+            <td sec:authorize="hasRole('ROLE_ADMIN')"> <a class="btn btn-danger" th:href="@{'/programs/delete/'+${program.id}}">Delete</a> </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
