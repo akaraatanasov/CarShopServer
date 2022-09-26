@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "93d0c503-da67-4637-b5d2-dfee5f36ed8e",
+		"name": "CSCB869",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2459480"
+	},
+	"item": [
+		{
+			"name": "getAllVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVehicleByPlateNumber",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/vehicles/CA1234AP",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicles",
+						"CA1234AP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVehicleRepairsByPlateNumber",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/vehicles/CA1234AP/repairs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicles",
+						"CA1234AP",
+						"repairs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addVehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"make\": \"TOYOTA\",\n    \"model\": \"LAND_CRUISER\",\n    \"plateNumber\": \"CA0493PP\",\n    \"year\": \"1999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllWorkers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/workers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllWorkerById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/workers/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"workers",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addWorker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Alex\",\n    \"lastName\": \"K\",\n    \"expertise\": \"GENERIC\",\n    \"shopId\": 7\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/workers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllShops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shops",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Alex Engine Tuning\",\n    \"make\": \"GENERIC\",\n    \"expertise\": \"ENGINE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shops",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getShopRepairs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shops/7/repairs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops",
+						"7",
+						"repairs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getShopRepair",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shops/7/repairs/20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops",
+						"7",
+						"repairs",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShopRepair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"12:34\",\n    \"repairType\": \"GENERIC\",\n    \"vehiclePlateNumber\": \"CA0493PP\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shops/7/repairs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops",
+						"7",
+						"repairs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateShopRepair",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"18:34\",\n    \"repairType\": \"ENGINE\",\n    \"vehiclePlateNumber\": \"CA0493PP\",\n    \"hoursWork\": 4.0,\n    \"pricePerHour\": 20.00\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shops/7/repairs/28",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shops",
+						"7",
+						"repairs",
+						"28"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
